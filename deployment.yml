@@ -1,0 +1,21 @@
+name: PriceComparison UK Deployment
+
+environments:
+  production:
+    domain: pricecomparison.uk
+    node_env: production
+    branch: main
+  staging:
+    domain: staging.pricecomparison.uk
+    node_env: staging
+    branch: develop
+  development:
+    domain: dev.pricecomparison.uk
+    node_env: development
+    branch: develop
+
+shared_env_vars:
+  NEXT_PUBLIC_SITE_URL: ${DOMAIN}
+  NEXT_PUBLIC_AMAZON_UK_AFFILIATE_ID: ${AMAZON_UK_AFFILIATE_ID}
+  AMAZON_ACCESS_KEY: ${AMAZON_ACCESS_KEY}
+  AMAZON_SECRET_KEY: ${AMAZON_SECRET_KEY} 
